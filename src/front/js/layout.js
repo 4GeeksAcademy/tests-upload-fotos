@@ -8,7 +8,9 @@ import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { UploadImg } from "./pages/home";
 import injectContext from "./store/appContext";
-
+import {UploadImage} from "./pages/page2.js";
+import {UploadImage3} from "./pages/page3.js";
+import {UploadImage4} from "./pages/page4.js";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -28,6 +30,9 @@ const Layout = () => {
                     <Routes>
                         <Route element={<UploadImg />} path="/" />
                         <Route element={<Demo />} path="/demo" />
+                        <Route element={<UploadImage />} path="/upload-img" />
+                        <Route element={<UploadImage3 />} path="/upload3" />
+                        <Route element={<UploadImage4 />} path="/upload4" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>

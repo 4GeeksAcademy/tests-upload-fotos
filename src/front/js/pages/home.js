@@ -9,6 +9,7 @@ export const UploadImg = () => {
 
 	const cld = new Cloudinary({cloud: {cloudName: 'dbxeaqsv4'}});
 
+    
     const [imageSelected, setImageSelected] = useState ("")
 
     const uploadImage = (files) =>{

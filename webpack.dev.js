@@ -48,5 +48,10 @@ module.exports = merge(common, {
         //     encoding: 'utf-8'           // Which encoding scheme to use on files
         // }),
         new webpack.HotModuleReplacementPlugin()
-    ]
+    ],
+    resolve: {
+      fallback: {
+        http: require.resolve("stream-http"),
+      },
+    },
 });

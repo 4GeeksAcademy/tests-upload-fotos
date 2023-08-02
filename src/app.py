@@ -32,6 +32,10 @@ db.init_app(app)
 
 # Allow CORS requests to this API
 CORS(app)
+@app.after_request
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = 'https://victormagacbt-bookish-adventure-9vpxgr6v467274p-3000.preview.app.github.dev'
+    return response
 
 # add the admin
 setup_admin(app)
