@@ -3,6 +3,7 @@ import "../../styles/home.css";
 import { cloudinary } from "cloudinary-core";
 
 export const UploadImage4 = () => {
+
   const presetKey = "dumn5jgp"; // Reemplaza con tu upload_preset de Cloudinary
   const cloudName = "dbxeaqsv4"; // Reemplaza con tu cloud_name de Cloudinary
   const [image, setImage] = useState("");
@@ -71,14 +72,13 @@ export const UploadImage4 = () => {
       });
   };
   
-
     return (
       <div>
             <div>
                 <input type="file" name="image" onChange={handleFile} />
             </div>
                 {image && (
-                <img src={image} className="w-50 h-50" alt="Uploaded Preview" />
+                <img src={image} className="w-100 h-100" alt="Uploaded Preview" />
                 )}
             {/* Aquí puedes agregar los inputs para los datos adicionales */}
             <div>
@@ -89,7 +89,7 @@ export const UploadImage4 = () => {
                     value={username}
                     onChange={(e) =>{setUsername(e.target.value)}}
                 />
-            </div>
+                </div>
             <div>
                 <input
                     type="text"
