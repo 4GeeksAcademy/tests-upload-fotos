@@ -8,6 +8,12 @@ export const UploadImage4 = () => {
   const [image, setImage] = useState("");
   const [username, setUsername] = useState("")
   const [title, setTitle] = useState("")
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("")
+  const [publishing_date, setPublishingDate] = useState("")
+  const [link, setLink] = useState("");
+  const [price, setPrice] = useState("")
+  const [type, setType] = useState("")
 
   useEffect(() => {		
 		  uploadImage();
@@ -21,7 +27,7 @@ export const UploadImage4 = () => {
 
   const handleUpload = () => {
       uploadImage(image);
-      sendDataToAPI(username, title);
+      sendDataToAPI(username, title, description, location, publishing_date, link, price, type);
     
   };
 
@@ -33,7 +39,7 @@ export const UploadImage4 = () => {
             headers: { 
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({username, title}) 
+            body: JSON.stringify({username, title, description, location, publishing_date, link, price, type}) 
         })
         .then((res) => res.json())
         .then((data) => {
@@ -65,8 +71,6 @@ export const UploadImage4 = () => {
       });
   };
   
-  
-    
 
     return (
       <div>
@@ -93,6 +97,60 @@ export const UploadImage4 = () => {
                     placeholder="Title"
                     value={title}
                     onChange={(e) =>{setTitle(e.target.value)}}
+                />
+            </div>
+            <div>
+                <input
+                    type="text"
+                    name="title"
+                    placeholder="Title"
+                    value={description}
+                    onChange={(e) =>{setDescription(e.target.value)}}
+                />
+            </div>
+            <div>
+                <input
+                    type="text"
+                    name="title"
+                    placeholder="Title"
+                    value={location}
+                    onChange={(e) =>{setLocation(e.target.value)}}
+                />
+            </div>
+            <div>
+                <input
+                    type="text"
+                    name="title"
+                    placeholder="Title"
+                    value={publishing_date}
+                    onChange={(e) =>{setPublishingDate(e.target.value)}}
+                />
+            </div>
+            <div>
+                <input
+                    type="text"
+                    name="title"
+                    placeholder="Title"
+                    value={link}
+                    onChange={(e) =>{setLink(e.target.value)}}
+                />
+            </div>
+            <div>
+                <input
+                    type="text"
+                    name="title"
+                    placeholder="Title"
+                    value={price}
+                    onChange={(e) =>{setPrice(e.target.value)}}
+                />
+            </div>
+            <div>
+                <input
+                    type="text"
+                    name="title"
+                    placeholder="Title"
+                    value={type}
+                    onChange={(e) =>{setType(e.target.value)}}
                 />
             </div>
             <div>
